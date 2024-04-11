@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Set background color */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .container {
+            max-width: 800px; /* Set maximum width for the container */
+            margin: 20px auto; /* Center the container horizontally */
+            background-color: #fff; /* Set background color for the box */
+            border-radius: 10px; /* Add border radius to create rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+            padding: 20px; /* Add padding inside the box */
+        }
+
+        header {
+            background-color: #87CEEB;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 10px; /* Adjust border radius to match the container */
+            border-top-right-radius: 10px; /* Adjust border radius to match the container */
+        }
+
+        main {
+            padding-top: 20px; /* Add padding to separate header from content */
+        }
+
+        #calculator {
+            margin-top: 20px;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 30px); /* Adjusted width to accommodate the info button */
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #87CEEB;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #87CEEB;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tax Calculator</h1>
+        </header>
+        <main>
+            <section id="calculator">
+                <label for="income">Enter Gross annual income:</label>
+                <input type="number" id="income" placeholder="Enter Gross annual income">
+            </section>
+            <section id="calculator">
+                <label for="income">Enter Extra income:</label>
+                <input type="number" id="income" placeholder="Enter Extra income">
+            </section>
+            <section id="calculator">
+                <label for="income">Enter Age of Group :</label>
+                <input type="number" id="income" placeholder="Enter Age of Group">
+            </section>
+            <section id="calculator">
+                <label for="income">Enter Total Applicable deductions:</label>
+                <input type="number" id="income" placeholder="Enter Extra income">
+            </section>
+
+            <button onclick="calculateTax()">Calculate Tax</button>
+            <p id="taxResult"></p>
+        </main>
+    </div>
+    <script>
+        function calculateTax() {
+            const income = parseFloat(document.getElementById('income').value);
+
+            // Example tax calculation (replace with your own algorithm)
+            const taxRate = 0.2; // 20%
+            const taxAmount = income * taxRate;
+
+            const taxResultElement = document.getElementById('taxResult');
+            taxResultElement.textContent = `Your tax amount is: {taxAmount.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
